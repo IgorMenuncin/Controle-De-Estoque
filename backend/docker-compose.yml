@@ -1,0 +1,20 @@
+version: '4.1'
+
+services:
+  database:
+    image: postgres
+    container_name: projeto_produtos1
+    restart: always
+    ports:
+      - 5433:5432
+      # A primeira porta é a que sera acessada localmente, a segunda é respectiva ao postgres, ou seja, 5432
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=database
+    volumes:
+      - pgdata:/data/postgres
+
+volumes:
+  pgdata:
+    driver: local
