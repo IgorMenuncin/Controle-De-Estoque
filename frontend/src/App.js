@@ -23,6 +23,7 @@ function App() {
       </button>
       <button
         onClick={() => {
+          getBanco();
           MenuOption ? (MenuOption === "BotaoExibirProduto" ? setMenuOption(false) : setMenuOption("BotaoExibirProduto")) : setMenuOption("BotaoExibirProduto") //Função para verificar se a pagina ja esta exibindo algo
         }}
         type="button"

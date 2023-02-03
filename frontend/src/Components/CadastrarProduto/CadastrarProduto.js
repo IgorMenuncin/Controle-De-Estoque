@@ -9,7 +9,7 @@ const StyledCadastrarProduto = styled.div`
 
 export const CadastrarProduto = () => {
     const [inputValueNome, setInputValueNome] = React.useState("");
-    const [inputValueEstoque, setInputValueEstoque] = React.useState();
+    const [inputValueEstoque, setInputValueEstoque] = React.useState("");
     
     function limparInputs() {
         setInputValueNome("");
@@ -17,6 +17,10 @@ export const CadastrarProduto = () => {
     }
 
     async function criarProduto() {
+        // let nome = inputValueNome;
+        // let primeiraLetra = nome.shift;
+        // primeiraLetra.toUpperCase();
+        // console.log(primeiraLetra + nome);
         await axios.post("http://localhost:3223/create", {name: inputValueNome, estoque: inputValueEstoque});
         limparInputs();
     }
@@ -32,7 +36,7 @@ export const CadastrarProduto = () => {
                         className="form-control" 
                         aria-describedby="emailHelp" 
                         onChange={(event) => {
-                            setInputValueNome(event.target.value)
+                            setInputValueNome(event.target.value);
                         }}
                     />
                 </div>
